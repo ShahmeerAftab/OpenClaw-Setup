@@ -1,4 +1,3 @@
-
 OpenClaw Setup & Usage Guide – Windows / Linux (Simple)
 
 A beginner‑friendly guide to run OpenClaw on Windows (via WSL2) or Linux.
