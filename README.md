@@ -1,8 +1,4 @@
-Ah, got it! 😄 Shahmeer, the reason headings and formatting aren’t showing as **bold or proper headings** is because GitHub README files use **Markdown syntax**, not plain text. You need to add `#` for headings, `-` or `*` for lists, and triple backticks for code blocks.
 
-Here’s your content converted to proper **Markdown** ready to paste in `README.md`:
-
----
 
 ````markdown
 # OpenClaw Setup & Usage Guide
