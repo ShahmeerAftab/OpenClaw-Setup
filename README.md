@@ -1,169 +1,214 @@
-OpenClaw Setup & Usage Guide – Windows / Linux (Simple)
 
-A beginner‑friendly guide to run OpenClaw on Windows (via WSL2) or Linux.
-OpenClaw lets you run persistent AI agents that act like “always-on employees.”
 
-What You Need
+````markdown
+# OpenClaw Setup & Usage Guide
 
-Windows 10/11 with WSL2 or Linux
+OpenClaw is a **headless AI agent framework**. It runs in the background (terminal/server) and lets you deploy AI agents that can work like **always-on employees**.
 
-Node.js v20+
+## Use it for:
+- Persistent AI tasks
+- Multi-channel monitoring & automation
+- CLI/TUI-based control
 
-npm latest
+## Supports:
+- OpenAI GPT models (GPT-4, GPT-4o-mini, GPT-3.5)
+- Claude (requires paid API key & credits)
 
-Git
+---
 
-OpenAI API Key (free trial works for testing)
+## Requirements
+- Windows 10/11 (WSL2) or Linux
+- Node.js v20+
+- npm latest
+- Git
+- OpenAI API Key (for testing, free trial works)
+- Optional: Claude API key (paid)
 
-Optional: Claude API key (paid)
+---
 
-Step 0: Install WSL2 (Windows Only)
+## WSL Setup (Windows only)
+Open PowerShell as admin:
 
-Open PowerShell as administrator and run:
-
+```powershell
 wsl --install
+````
 
+* Restart PC.
+* Install Ubuntu from Microsoft Store.
+* Open Ubuntu terminal and create a UNIX username when prompted.
+* Update packages:
 
-Restart your PC.
-
-Install Ubuntu from Microsoft Store.
-
-Open Ubuntu terminal → create a UNIX username when prompted.
-
-Update packages:
-
+```bash
 sudo apt update && sudo apt upgrade -y
+```
 
-Step 1: Install Node.js & npm
+---
 
-Check if Node.js is installed:
+## Node.js & npm
 
-node -v
+Install Node.js v20+:
 
-
-✅ If version is v20+, skip installation
-❌ If not, install Node.js:
-
+```bash
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
-
+```
 
 Check versions:
 
+```bash
 node -v
 npm -v
+```
 
+Upgrade npm (optional):
 
-(Optional) Upgrade npm:
-
+```bash
 npm install -g npm@latest
+```
 
-Step 2: Install OpenClaw
+---
 
-Clone the OpenClaw repository:
+## OpenClaw Installation
 
+Clone the repo:
+
+```bash
 git clone https://github.com/openclaw/openclaw.git
 cd openclaw
-
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
+Install TUI daemon (optional):
 
-(Optional) Install TUI daemon:
-
+```bash
 openclaw onboard --install-daemon
+```
 
-Step 3: Set Your API Key
+---
 
-OpenAI Example (free trial works):
+## API Key Setup
 
+OpenAI example:
+
+```bash
 export OPENAI_API_KEY="sk-your-openai-key"
-
+```
 
 Check key:
 
+```bash
 echo $OPENAI_API_KEY
+```
 
+⚠️ **Claude requires a paid API key and credits.**
 
-⚠️ Claude API key requires a paid subscription and credits.
+---
 
-Step 4: Start Using OpenClaw
+## Running OpenClaw
 
-Option A: TUI mode (recommended)
+**TUI mode (recommended):**
 
+```bash
 openclaw tui
+```
 
+**Hatch an agent:**
 
-Option B: Hatch an agent
-
-openclaw hatch --agent main
-
+```bash
+openclaw hatch
+```
 
 Inside TUI:
 
-Change model:
+* Change model:
 
+```bash
 /model gpt-4o-mini
+```
 
+* Send message:
 
-Send a message:
-
+```bash
 /say hello
+```
 
-Step 5: Optional Skills
+---
+
+## Optional Skills
 
 During setup, OpenClaw may ask to install skills:
 
-1password, blogwatcher, camsnap, clawhub, github, openai-whisper, etc.
+* 1password, blogwatcher, camsnap, clawhub, github, openai-whisper, etc.
+* Skip any you don’t need
+* Some skills require API keys (e.g., `GOOGLE_PLACES_API_KEY`)
 
-Skip any you don’t need
+---
 
-Some skills require API keys (e.g., GOOGLE_PLACES_API_KEY)
+## Troubleshooting
 
-Step 6: Troubleshooting
+* No response in TUI → check API key, Node.js ≥20
+* Network/npm issues:
 
-No response → check API key & Node.js version ≥20
-
-Network/npm issues:
-
+```bash
 npm config set registry https://registry.npmjs.org/
 npm install
+```
 
+* Node.js version error → upgrade using NodeSource script
+* Command not found → `npm install -g` or run `npx openclaw tui`
 
-Node.js version error → upgrade using NodeSource script
+---
 
-Command not found → try:
+## Tips
 
-npm install -g
-# or
-npx openclaw tui
+* Test with OpenAI free trial first
+* Persistent agents require paid API
+* Export API key in terminal before running OpenClaw
+* Keep dependencies updated:
 
+```bash
+npm update
+```
 
-TUI stuck on start → wait 20–30 seconds
+---
 
-Step 7: Quick Test
+## Example Commands
+
+Set API key:
+
+```bash
+export OPENAI_API_KEY="sk-xxxx"
+```
 
 Start TUI:
 
+```bash
 openclaw tui
+```
 
+Hatch main agent:
 
-Send:
+```bash
+openclaw hatch --agent main
+```
 
+Change model:
+
+```bash
+/model gpt-4o-mini
+```
+
+Send a message:
+
+```bash
 /say Hello OpenClaw!
+```
 
 
-✅ If OpenClaw replies, setup is working!
-
-Step 8: Daily Workflow
-
-Terminal 1 → run TUI or Hatch agent
-
-Terminal 2 → interact with agent
-
-Exit anytime with Ctrl + C
-
-🎉 Done!
-You now have OpenClaw running on Windows/Linux and can start testing AI agents.
+Do you want me to do that too?
+```
