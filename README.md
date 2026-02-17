@@ -1,11 +1,8 @@
-
-
-````markdown
 ## OpenClaw Setup & Usage Guide
 
 OpenClaw is a **headless AI agent framework**. It runs in the background (terminal/server) and lets you deploy AI agents that can work like **always-on employees**.
 
-## Use it for:
+Use it for:
 - Persistent AI tasks
 - Multi-channel monitoring & automation
 - CLI/TUI-based control
@@ -14,8 +11,6 @@ OpenClaw is a **headless AI agent framework**. It runs in the background (termin
 - OpenAI GPT models (GPT-4, GPT-4o-mini, GPT-3.5)
 - Claude (requires paid API key & credits)
 
----
-
 ## Requirements
 - Windows 10/11 (WSL2) or Linux
 - Node.js v20+
@@ -23,8 +18,6 @@ OpenClaw is a **headless AI agent framework**. It runs in the background (termin
 - Git
 - OpenAI API Key (for testing, free trial works)
 - Optional: Claude API key (paid)
-
----
 
 ## WSL Setup (Windows only)
 Open PowerShell as admin:
@@ -41,8 +34,6 @@ wsl --install
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
-
----
 
 ## Node.js & npm
 
@@ -149,7 +140,7 @@ During setup, OpenClaw may ask to install skills:
 
 ---
 
-## Troubleshooting
+# Troubleshooting
 
 * No response in TUI → check API key, Node.js ≥20
 * Network/npm issues:
