@@ -1,7 +1,7 @@
 
 
 ````markdown
-# OpenClaw Setup & Usage Guide
+## OpenClaw Setup & Usage Guide
 
 OpenClaw is a **headless AI agent framework**. It runs in the background (terminal/server) and lets you deploy AI agents that can work like **always-on employees**.
 
@@ -209,6 +209,3 @@ Send a message:
 /say Hello OpenClaw!
 ```
 
-
-Do you want me to do that too?
-```
