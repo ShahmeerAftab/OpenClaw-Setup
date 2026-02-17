@@ -218,6 +218,3 @@ Send a message:
 ---
 
 
-
-Do you want me to do that too?
-```
